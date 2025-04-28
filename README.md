@@ -1,5 +1,7 @@
 # DART: Diffusion-Autoregressive Recursive Transformer
 
+![https://swarms.ai](dart-architecture.svg)
+
 ## Overview
 DART (Diffusion-Autoregressive Recursive Transformer) is a novel hybrid architecture that combines diffusion-based and autoregressive approaches for text generation. By leveraging both paradigms, DART achieves robust global coherence through diffusion while maintaining local consistency via autoregressive modeling.
 
