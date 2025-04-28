@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8f9fa" rx="10" ry="10"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle">Joint Diffusion and Autoregressive Transformer (DART)</text>
+  
+  <!-- Input Area -->
+  <rect x="50" y="80" width="700" height="60" fill="#e3f2fd" stroke="#2196f3" stroke-width="2" rx="5" ry="5"/>
+  <text x="400" y="115" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Input Token IDs</text>
+  
+  <!-- Embeddings -->
+  <rect x="50" y="160" width="700" height="60" fill="#e8f5e9" stroke="#4caf50" stroke-width="2" rx="5" ry="5"/>
+  <text x="400" y="195" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Token Embeddings + Positional Embeddings</text>
+  
+  <!-- Diffusion Path on Left -->
+  <rect x="50" y="240" width="330" height="200" fill="#fff3e0" stroke="#ff9800" stroke-width="2" rx="5" ry="5"/>
+  <text x="215" y="260" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Diffusion Path</text>
+  
+  <!-- Autoregressive Path on Right -->
+  <rect x="420" y="240" width="330" height="200" fill="#e1f5fe" stroke="#03a9f4" stroke-width="2" rx="5" ry="5"/>
+  <text x="585" y="260" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Autoregressive Path</text>
+  
+  <!-- Diffusion Components -->
+  <rect x="80" y="280" width="270" height="40" fill="#ffcc80" stroke="#ff9800" stroke-width="1" rx="3" ry="3"/>
+  <text x="215" y="305" font-family="Arial" font-size="14" text-anchor="middle">Add Noise (Forward Diffusion)</text>
+  
+  <rect x="80" y="330" width="270" height="40" fill="#ffcc80" stroke="#ff9800" stroke-width="1" rx="3" ry="3"/>
+  <text x="215" y="355" font-family="Arial" font-size="14" text-anchor="middle">DiT Block 1 (Non-causal)</text>
+  
+  <rect x="80" y="380" width="270" height="40" fill="#ffcc80" stroke="#ff9800" stroke-width="1" rx="3" ry="3"/>
+  <text x="215" y="405" font-family="Arial" font-size="14" text-anchor="middle">DiT Block n (Non-causal)</text>
+  
+  <!-- Autoregressive Components -->
+  <rect x="450" y="280" width="270" height="40" fill="#81d4fa" stroke="#03a9f4" stroke-width="1" rx="3" ry="3"/>
+  <text x="585" y="305" font-family="Arial" font-size="14" text-anchor="middle">Clean Embeddings</text>
+  
+  <rect x="450" y="330" width="270" height="40" fill="#81d4fa" stroke="#03a9f4" stroke-width="1" rx="3" ry="3"/>
+  <text x="585" y="355" font-family="Arial" font-size="14" text-anchor="middle">AR Block 1 (Causal)</text>
+  
+  <rect x="450" y="380" width="270" height="40" fill="#81d4fa" stroke="#03a9f4" stroke-width="1" rx="3" ry="3"/>
+  <text x="585" y="405" font-family="Arial" font-size="14" text-anchor="middle">AR Block n (Causal)</text>
+  
+  <!-- Information Exchange -->
+  <line x1="350" y1="355" x2="450" y2="355" stroke="#9c27b0" stroke-width="2" stroke-dasharray="5,5"/>
+  <polygon points="445,350 455,355 445,360" fill="#9c27b0"/>
+  <line x1="450" y1="370" x2="350" y2="370" stroke="#9c27b0" stroke-width="2" stroke-dasharray="5,5"/>
+  <polygon points="355,365 345,370 355,375" fill="#9c27b0"/>
+  <text x="400" y="340" font-family="Arial" font-size="12" fill="#9c27b0" text-anchor="middle">Information</text>
+  <text x="400" y="355" font-family="Arial" font-size="12" fill="#9c27b0" text-anchor="middle">Exchange</text>
+  
+  <!-- Output Heads -->
+  <rect x="80" y="460" width="270" height="40" fill="#ffcc80" stroke="#ff9800" stroke-width="1" rx="3" ry="3"/>
+  <text x="215" y="485" font-family="Arial" font-size="14" text-anchor="middle">Diffusion Head</text>
+  
+  <rect x="450" y="460" width="270" height="40" fill="#81d4fa" stroke="#03a9f4" stroke-width="1" rx="3" ry="3"/>
+  <text x="585" y="485" font-family="Arial" font-size="14" text-anchor="middle">Autoregressive Head</text>
+  
+  <!-- Output Area -->
+  <rect x="50" y="520" width="700" height="60" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2" rx="5" ry="5"/>
+  <text x="400" y="555" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Combined Output (weighted by ar_weight)</text>
+  
+  <!-- Connections -->
+  <line x1="400" y1="140" x2="400" y2="160" stroke="#000" stroke-width="2"/>
+  <line x1="400" y1="220" x2="400" y2="240" stroke="#000" stroke-width="2"/>
+  <line x1="215" y1="220" x2="215" y2="280" stroke="#000" stroke-width="2"/>
+  <line x1="585" y1="220" x2="585" y2="280" stroke="#000" stroke-width="2"/>
+  <line x1="215" y1="320" x2="215" y2="330" stroke="#000" stroke-width="2"/>
+  <line x1="215" y1="370" x2="215" y2="380" stroke="#000" stroke-width="2"/>
+  <line x1="215" y1="420" x2="215" y2="460" stroke="#000" stroke-width="2"/>
+  <line x1="585" y1="320" x2="585" y2="330" stroke="#000" stroke-width="2"/>
+  <line x1="585" y1="370" x2="585" y2="380" stroke="#000" stroke-width="2"/>
+  <line x1="585" y1="420" x2="585" y2="460" stroke="#000" stroke-width="2"/>
+  <line x1="215" y1="500" x2="215" y2="520" stroke="#000" stroke-width="2"/>
+  <line x1="585" y1="500" x2="585" y2="520" stroke="#000" stroke-width="2"/>
+  
+  <!-- Diffusion Time Step -->
+  <rect x="50" y="280" width="20" height="140" fill="#e1bee7" stroke="#9c27b0" stroke-width="1" rx="3" ry="3"/>
+  <text x="60" y="350" font-family="Arial" font-size="14" text-anchor="middle" transform="rotate(-90 60,350)">Diffusion Step Embedding</text>
+  <line x1="70" y1="350" x2="80" y2="350" stroke="#9c27b0" stroke-width="2"/>
+  
+  <!-- Legend -->
+  <rect x="610" y="80" width="20" height="10" fill="#fff3e0" stroke="#ff9800" stroke-width="1"/>
+  <text x="640" y="90" font-family="Arial" font-size="12" text-anchor="start">Diffusion Components</text>
+  
+  <rect x="610" y="100" width="20" height="10" fill="#e1f5fe" stroke="#03a9f4" stroke-width="1"/>
+  <text x="640" y="110" font-family="Arial" font-size="12" text-anchor="start">Autoregressive Components</text>
+  
+  <rect x="610" y="120" width="20" height="10" fill="#e1bee7" stroke="#9c27b0" stroke-width="1"/>
+  <text x="640" y="130" font-family="Arial" font-size="12" text-anchor="start">Conditioning Elements</text>
+</svg>
