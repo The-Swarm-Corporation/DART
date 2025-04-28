@@ -32,7 +32,7 @@ pip install -e .
 
 ## Quick Start
 ```python
-from dart import DART, DARTConfig
+from main import DART, DARTConfig
 
 # Initialize configuration
 config = DARTConfig(
