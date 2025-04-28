@@ -1,5 +1,7 @@
-swarms
+torch
 loguru
-python-dotenv
-pyyaml
-swarm-models
+transformers
+einops
+loguru
+numpy
+matplotlib
