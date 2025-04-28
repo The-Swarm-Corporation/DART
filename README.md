@@ -23,7 +23,7 @@ DART consists of several key components:
 ```bash
 pip install dart-transformer
 # or
-git clone https://github.com/your-repo/DART.git
+https://github.com/The-Swarm-Corporation/DART.git
 cd DART
 pip install -e .
 ```
@@ -87,13 +87,10 @@ generated = model.generate(
 )
 ```
 
-## Performance and Benchmarks
-- Training efficiency: ~X tokens/second on A100 GPU
-- Memory usage: ~Y GB for batch size 32
-- Generation speed: ~Z tokens/second
 
 ## Citation
 If you use DART in your research, please cite:
+
 ```bibtex
 @article{dart2024,
   title={DART: Diffusion-Autoregressive Recursive Transformer for Text Generation},
