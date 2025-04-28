@@ -23,11 +23,9 @@ DART consists of several key components:
 
 ## Installation
 ```bash
-pip install dart-transformer
-# or
 https://github.com/The-Swarm-Corporation/DART.git
 cd DART
-pip install -e .
+pip install -r requirements.txt
 ```
 
 ## Quick Start
